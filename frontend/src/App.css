@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background: #111827;
+}
+
+a {
+  text-decoration: none;
+}
+
+.site {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.site.dark {
+  background: #111827;
+  color: #ffffff;
+}
+
+.site.light {
+  background: #fff3b0;
+  color: #111827;
+}
+
+/* TOP NAV */
+.top-nav {
+  position: fixed;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: rgba(17, 24, 39, 0.88);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+}
+
+.site.light .top-nav {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #facc15;
+}
+
+.top-nav button {
+  border: none;
+  padding: 11px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 800;
+  background: transparent;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.site.light .top-nav button {
+  color: #111827;
+}
+
+.top-nav button:hover,
+.theme-btn {
+  background: #facc15 !important;
+  color: #111827 !important;
+}
+
+/* COMMON SECTIONS */
+.section {
+  width: 100%;
+  padding: 42px 6%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  scroll-margin-top: 95px;
+}
+
+/* HOME HERO */
+.hero {
+  min-height: 58vh;
+  padding-top: 125px;
+  padding-bottom: 24px;
+  flex-direction: column;
+}
+
+.tag {
+  color: #facc15;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.site.light .tag {
+  color: #92400e;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 6vw, 78px);
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -3px;
+  color: #ffffff;
+}
+
+.site.light .hero h1 {
+  color: #111827;
+}
+
+.hero-text {
+  max-width: 720px;
+  margin-top: 18px;
+  font-size: 19px;
+  line-height: 1.7;
+  color: #e5e7eb;
+}
+
+.site.light .hero-text {
+  color: #374151;
+}
+
+/* SIGNIN CARD JUST AFTER HERO */
+.compact {
+  padding-top: 8px;
+  padding-bottom: 45px;
+}
+
+.auth-box {
+  width: 430px;
+  max-width: 92vw;
+  padding: 48px;
+  border-radius: 38px;
+  background: #ffffff;
+  color: #111827;
+  box-shadow: 0 35px 85px rgba(0,0,0,0.35);
+}
+
+.auth-box h2 {
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.auth-box p {
+  margin-bottom: 28px;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.auth-box button {
+  width: 100%;
+  padding: 16px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 16px;
+  background: #111827;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.auth-box .yellow-btn {
+  background: #facc15;
+  color: #111827;
+}
+
+.auth-box span {
+  display: block;
+  margin-top: 18px;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ABOUT / FEATURES / WORKFLOW */
+.content {
+  flex-direction: column;
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.content h2 {
+  font-size: 44px;
+  margin-bottom: 22px;
+  color: #facc15;
+}
+
+.site.light .content h2 {
+  color: #92400e;
+}
+
+.content p {
+  max-width: 950px;
+  font-size: 20px;
+  line-height: 1.85;
+  color: #e5e7eb;
+}
+
+.site.light .content p {
+  color: #374151;
+}
+
+/* OTHER APP PAGES */
+.app-bg {
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px 20px 50px;
+  background: #111827;
+  color: white;
+}
+
+.page-card,
+.dashboard-card,
+.paper-card {
+  background: white;
+  color: black;
+  border-radius: 34px;
+  box-shadow: 0 35px 85px rgba(0,0,0,0.35);
+}
+
+.page-card,
+.dashboard-card {
+  max-width: 540px;
+  margin: 0 auto 35px;
+  padding: 44px;
+}
+
+.page-card.large {
+  max-width: 700px;
+}
+
+.page-card h2,
+.dashboard-card h2 {
+  font-size: 34px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 14px;
+  color: black;
+}
+
+.muted {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 18px;
+}
+
+.link {
+  text-align: center;
+  color: #2563eb;
+  margin-top: 18px;
+  font-weight: 800;
+}
+
+form {
+  margin-top: 18px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 15px 16px;
+  margin: 10px 0;
+  border-radius: 16px;
+  border: none;
+  background: #f3f4f6;
+  color: black;
+  font-size: 15px;
+  outline: none;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  box-shadow: 0 0 0 3px rgba(250,204,21,0.45);
+}
+
+.page-card button,
+.dashboard-card button,
+form button {
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  margin-top: 12px;
+  border: none;
+  background: #111827;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.page-card button:hover,
+.dashboard-card button:hover,
+form button:hover {
+  background: #facc15;
+  color: #111827;
+}
+
+.yellow-btn {
+  background: #facc15 !important;
+  color: #111827 !important;
+}
+
+.dashboard-links {
+  display: grid;
+  gap: 14px;
+  margin-top: 25px;
+}
+
+.dashboard-card p {
+  margin: 10px 0;
+  color: #374151;
+}
+
+.paper-card {
+  max-width: 920px;
+  margin: 24px auto;
+  padding: 30px;
+}
+
+.paper-card h3 {
+  font-size: 26px;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.paper-card p {
+  color: #374151;
+  line-height: 1.7;
+  margin: 6px 0;
+}
+
+.action-row {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.accept-btn {
+  background: #16a34a !important;
+  color: white !important;
+}
+
+.reject-btn {
+  background: #dc2626 !important;
+  color: white !important;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+  .top-nav {
+    width: 92%;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .top-nav button {
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+
+  .hero {
+    min-height: 60vh;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero-text,
+  .content p {
+    font-size: 18px;
+  }
+
+  .content h2 {
+    font-size: 36px;
+  }
+
+  .auth-box,
+  .page-card,
+  .dashboard-card {
+    padding: 30px;
+  }
+
+  .action-row {
+    flex-direction: column;
+  }
+}
