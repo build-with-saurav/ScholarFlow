@@ -43,7 +43,7 @@ ScholarFlow solves this problem by creating one central platform where:
 
 ### Admin Dashboard & Review
 
-![Admin Dashboard](screenshots/admin%20dashboard%20and%20review.png)
+![Admin Dashboard](screenshots/admin-dashboard-review.png)
 
 
 ## Features
