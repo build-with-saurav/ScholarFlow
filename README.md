@@ -1,198 +1,246 @@
 # ScholarFlow
 
-ScholarFlow is a full-stack research paper submission and review portal.  
-The idea behind this project is simple: participants should be able to submit their research papers online, and admins/reviewers should be able to review those papers, accept or reject them, and give feedback.
+ScholarFlow is a full-stack research paper submission and review portal built to simplify the academic paper submission and review process.
 
-## Why I Built This Project
+It allows participants to submit research papers online and lets admins review, accept, or reject them with proper feedback.
 
-In many academic events or conferences, paper submission and review are usually handled manually through emails or forms. This can become confusing because participants may not know their paper status, and admins may find it difficult to track all submissions.
+---
 
-ScholarFlow solves this by providing one simple platform where:
+## Project Overview
 
-- Participants can create an account
-- Participants can submit research papers
-- Admins can review papers
-- Admins can accept or reject papers
-- Participants can track their paper status
+Traditional conference paper submission is often handled through email, spreadsheets, or forms, making the process messy and difficult to track.
 
-## Final Features
+ScholarFlow solves this problem by creating one central platform where:
 
-### User Authentication
-- Signup
-- Signin
-- Forgot password basic flow
-- Passwords are stored securely using hashing
+* Participants can register and submit papers
+* Admins can review submissions
+* Papers can be accepted or rejected
+* Feedback can be shared directly
 
-### Role-Based Access
-The role is decided automatically using email:
+---
 
-- Email ending with `@scholar.com` becomes **Admin**
-- Any other email becomes **Participant**
+## Features
+
+### Authentication System
+
+* User Signup
+* User Signin
+* Password hashing using bcrypt
+* JWT authentication
+
+### Role-Based System
+
+Users are assigned roles automatically:
+
+| Email Type      | Role        |
+| --------------- | ----------- |
+| `@scholar.com`  | Admin       |
+| Any other email | Participant |
 
 Example:
 
+[admin@scholar.com](mailto:admin@scholar.com) → Admin
+[student@gmail.com](mailto:student@gmail.com) → Participant
+
+---
+
+## Participant Features
+
+* Create account
+* Login
+* Submit research papers
+* Upload PDF files
+* Add title, abstract, keywords, and domain
+* View submitted papers
+* Track submission status
+* View admin feedback
+
+---
+
+## Admin Features
+
+* View all submitted papers
+* Review paper details
+* Accept papers
+* Reject papers
+* Add feedback
+* Manage submissions
+
+---
+
+## Tech Stack
+
+### Frontend
+
+* React.js
+* Vite
+* CSS
+
+### Backend
+
+* Node.js
+* Express.js
+
+### Database
+
+* MySQL
+
+### Additional Libraries
+
+* bcrypt.js
+* jsonwebtoken
+* multer
+* cors
+
+---
+
+## Project Structure
+
 ```text
-admin@scholar.com  → Admin
-student@gmail.com  → Participant
-Participant Features
-Submit research paper
-Upload PDF file
-Add title, abstract, keywords, and domain
-View submitted papers
-Track status: pending, accepted, or rejected
-View admin feedback
-Admin Features
-View all submitted papers
-Download/view PDF
-Accept paper
-Reject paper
-Add feedback
-View paper status
-Database
-
-MySQL is used to store:
-
-User details
-Login details
-Paper details
-Uploaded file path
-Paper review status
-Admin feedback
-Tech Stack Used
-Frontend
-React
-Vite
-CSS
-Backend
-Node.js
-Express.js
-Database
-MySQL
-Other Packages
-bcrypt.js for password hashing
-JWT for authentication
-Multer for PDF upload
-CORS for frontend-backend connection
-Why These Technologies Were Chosen
-
-React was chosen because it makes it easy to build a dynamic and interactive user interface.
-
-Node.js and Express.js were chosen because they are simple and fast for creating backend APIs.
-
-MySQL was chosen because the project needs structured data like users, roles, papers, and review status.
-
-Multer was used because the project requires PDF upload.
-
-JWT was used so that logged-in users can securely access their dashboard.
-
-bcrypt.js was used so passwords are not stored directly in the database.
-
-Project Structure
 ScholarFlow/
-├── frontend/      React frontend
-├── backend/       Node.js and Express backend
-├── database/      SQL database backup
-└── README.md
-How the Project Works
-Step 1: User Signup
+│── frontend/
+│── backend/
+│── database/
+│── README.md
+```
 
-A user creates an account.
-If the email ends with @scholar.com, the system automatically saves the user as admin.
-Otherwise, the user is saved as participant.
+---
 
-Step 2: User Signin
+## How It Works
 
-The user logs in using email and password.
-After login, the system checks the role.
+### Step 1: Signup
 
-Admin goes to Admin Dashboard
-Participant goes to Participant Dashboard
-Step 3: Participant Submits Paper
+Users create an account.
 
-The participant fills paper details and uploads a PDF file.
+If email ends with `@scholar.com`, they become admin.
 
-The submitted paper is saved in the database with default status:
+Otherwise, participant.
+
+---
+
+### Step 2: Login
+
+After login:
+
+* Admin → Admin Dashboard
+* Participant → Participant Dashboard
+
+---
+
+### Step 3: Paper Submission
+
+Participant submits:
+
+* Title
+* Abstract
+* Domain
+* Keywords
+* PDF
+
+Status is automatically set:
 
 pending
-Step 4: Admin Reviews Paper
 
-Admin can view all submitted papers.
-Admin can download the PDF, check details, and then accept or reject the paper.
+---
 
-Step 5: Participant Tracks Status
+### Step 4: Review Process
 
-Participant can see whether the paper is:
+Admin can:
 
-pending
-accepted
-rejected
+* Review papers
+* Accept or reject
+* Add feedback
 
-They can also see admin feedback.
+---
 
-Database Tables
+### Step 5: Status Tracking
 
-Main tables used:
+Participant can track:
 
-users
-papers
-password_reset_tokens
-How to Run the Project
-1. Clone the Repository
-git clone <your-repository-link>
+* Pending
+* Accepted
+* Rejected
+
+and read admin feedback.
+
+---
+
+## Database Tables
+
+Main tables:
+
+* users
+* papers
+* password_reset_tokens
+
+---
+
+## Installation Guide
+
+### Clone Repository
+
+```bash
+git clone https://github.com/SauravB210489CS/ScholarFlow.git
 cd ScholarFlow
-2. Setup Backend
+```
+
+---
+
+### Backend Setup
+
+```bash
 cd backend
 npm install
 node server.js
+```
 
-Backend runs on:
+Runs on:
 
 http://localhost:5000
-3. Setup Frontend
 
-Open another terminal:
+---
 
+### Frontend Setup
+
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
-Frontend runs on:
+Runs on:
 
 http://localhost:5173
-4. Setup Database
 
-Create MySQL database:
+---
 
+### Database Setup
+
+Create database:
+
+```sql
 CREATE DATABASE scholarflow;
+```
 
-Import SQL file:
+Import:
 
+```bash
 mysql -u root -p scholarflow < database/scholarflow.sql
-Final Status
+```
 
-This project is a working MVP of a research paper submission and review system.
+---
 
-Completed:
+## Future Improvements
 
-Frontend UI
-Backend APIs
-MySQL database
-Signup/signin
-Role-based dashboard
-Paper upload
-Admin review
-Accept/reject system
-Feedback system
-Future Improvements
+* Email notifications
+* Search and filter papers
+* Reviewer assignment system
+* Profile update
+* Better analytics dashboard
+* Deployment support
 
-These features can be added later:
+---
 
-Email notification after accept/reject
-Admin can manage only 5 participants
-Search and filter papers
-Profile update page
-Better reset password through email
-Deployment on Vercel/Render
-Author
+## Author
 
-Saurav Kumar Singh
+**Saurav Kumar Singh**
