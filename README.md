@@ -1,5 +1,11 @@
 # ScholarFlow
 
+
+![React](https://img.shields.io/badge/Frontend-React-blue)
+![Node.js](https://img.shields.io/badge/Backend-Node.js-green)
+![MySQL](https://img.shields.io/badge/Database-MySQL-orange)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
 ScholarFlow is a full-stack research paper submission and review portal built to simplify the academic paper submission and review process.
 
 It allows participants to submit research papers online and lets admins review, accept, or reject them with proper feedback.
